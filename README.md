@@ -91,7 +91,7 @@ Run the Inference Script to generate SQL queries for 30 random questions from Bi
 python inference_llm.py
 ```
 
-The generated data will be saved [here](./predicted/predict_dev.json).
+The generated data will be saved [./predicted/predict_dev.json](./predicted/predict_dev.json).
 
 
 ## Evaluating Generated Queries
@@ -137,5 +137,5 @@ Below is a screenshot of one run for your reference:
 
 If you face any issues or have questions, feel free to contact me at:
 
-- **Email:** nilavoboral@gamil.com
+- **Email:** nilavoboral@gmail.com
 

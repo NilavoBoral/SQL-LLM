@@ -47,6 +47,12 @@ huggingface-cli login
 huggingface-cli download meta-llama/Meta-Llama-3.1-8B-Instruct --local-dir Meta-Llama-3.1-8B-Instruct --local-dir-use-symlinks False
 ```
 
+### 5. Download Data to Evaluate the Generation Pipeline
+
+- Download [Bird Benchmark’s dev set](https://bird-bench.oss-cn-beijing.aliyuncs.com/dev.zip).
+- Unzip the file.
+- Rename the folder as `data` and place it in the following path: [./data](./data).
+
 
 ## Setup Instructions
 
@@ -87,13 +93,13 @@ pip install -r requirements.txt
 
 ## Run the Inference Script
 
-  Run the Inference Script to generate SQL queries for 30 random questions from Bird Benchmark’s [dev dataset](https://bird-bench.github.io/):
-  
-  ```bash
-  python inference_llm.py
-  ```
-  
-  The generated data will be saved [./predicted/predict_dev.json](./predicted/predict_dev.json).
+Run the Inference Script to generate SQL queries for 30 random questions from Bird Benchmark’s [dev dataset](https://bird-bench.github.io/):
+
+```bash
+python inference_llm.py
+```
+
+The generated data will be saved [./predicted/predict_dev.json](./predicted/predict_dev.json).
 
 
 ## Evaluating Generated Queries

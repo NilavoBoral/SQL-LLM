@@ -1,4 +1,5 @@
-# SQL Query Generation Using Open-Source LLM (Meta-Llama-3.1-8B-Instruct)
+# Text to SQL Query Generation 
+## Using Open-Source LLM (Meta-Llama-3.1-8B-Instruct)
 
 This project demonstrates the generation of SQL queries from real data using the **Meta-Llama-3.1-8B-Instruct** Large Language Model (LLM) downloaded from Hugging Face. The model has been quantized to 4-bit precision to optimize memory usage.
 

@@ -108,14 +108,14 @@ You can evaluate the efficiency of the generated SQL queries using the evaluatio
 
 > **Note:** Important Paths for Evaluation
 
-  To run the evaluation script, ensure the following paths are correctly set:
-  
-  - **Databases Path:** `f"./data/dev_databases/{db_name}/{db_name}.sqlite"` (where `db_name` is the database name)
-  - **Sample Data Path:** `"./data/dev_sample.json"`
-  - **Extracted Original SQL Queries File Path:** `"./data/dev_gold.sql"`
-  - **Predicted SQL Queries File Path:** `"./predicted/predict_dev.json"`
-  
-  You don't have to worry about these settings as they are already configured in `inference_llm.py`.
+> To run the evaluation script, ensure the following paths are correctly set:
+
+> - **Databases Path:** `f"./data/dev_databases/{db_name}/{db_name}.sqlite"` (where `db_name` is the database name)
+> - **Sample Data Path:** `"./data/dev_sample.json"`
+> - **Extracted Original SQL Queries File Path:** `"./data/dev_gold.sql"`
+> - **Predicted SQL Queries File Path:** `"./predicted/predict_dev.json"`
+
+> You don't have to worry about these settings as they are already configured in `inference_llm.py`.
 
 
 

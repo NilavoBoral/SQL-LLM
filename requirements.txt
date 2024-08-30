@@ -1,0 +1,12 @@
+numpy
+sqlglot
+func_timeout
+
+torch
+transformers
+bitsandbytes
+accelerate
+
+sentencepiece
+wheel
+flash_attn

@@ -23,7 +23,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### 4. Download the Open-Source LLM (**Meta-Llama-3.1-8B-Instruct**)
 
-#### i. Install Hugging Face CLI
+- **I. Install Hugging Face CLI
 
 Install the Hugging Face command line interface (CLI) for managing models:
 
@@ -31,7 +31,7 @@ Install the Hugging Face command line interface (CLI) for managing models:
 pip install -U "huggingface_hub[cli]"
 ```
 
-#### ii. Login to Hugging Face
+- **II. Login to Hugging Face
 
 Authenticate to Hugging Face using your access token:
 
@@ -41,7 +41,7 @@ huggingface-cli login
 
 > **Note:** Use your own Hugging Face read token during login. You can find your access token by going to [Hugging Face Tokens](https://huggingface.co/settings/tokens).
 
-#### iii. Download the LLM from Hugging Face:
+- **III. Download the LLM from Hugging Face:
 
 ```bash
 huggingface-cli download meta-llama/Meta-Llama-3.1-8B-Instruct --local-dir Meta-Llama-3.1-8B-Instruct --local-dir-use-symlinks False
@@ -108,14 +108,14 @@ You can evaluate the efficiency of the generated SQL queries using the evaluatio
 
 > **Note:** Important Paths for Evaluation
 
-To run the evaluation script, ensure the following paths are correctly set:
-
-- **Databases Path:** `f"./data/dev_databases/{db_name}/{db_name}.sqlite"` (where `db_name` is the database name)
-- **Sample Data Path:** `"./data/dev_sample.json"`
-- **Extracted Original SQL Queries File Path:** `"./data/dev_gold.sql"`
-- **Predicted SQL Queries File Path:** `"./predicted/predict_dev.json"`
-
-You don't have to worry about these settings as they are already configured in `inference_llm.py`.
+  To run the evaluation script, ensure the following paths are correctly set:
+  
+  - **Databases Path:** `f"./data/dev_databases/{db_name}/{db_name}.sqlite"` (where `db_name` is the database name)
+  - **Sample Data Path:** `"./data/dev_sample.json"`
+  - **Extracted Original SQL Queries File Path:** `"./data/dev_gold.sql"`
+  - **Predicted SQL Queries File Path:** `"./predicted/predict_dev.json"`
+  
+  You don't have to worry about these settings as they are already configured in `inference_llm.py`.
 
 
 

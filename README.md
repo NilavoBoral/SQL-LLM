@@ -1,4 +1,4 @@
-# SQL Query Generation Using open-source LLM (Meta-Llama-3.1-8B-Instruct)
+# SQL Query Generation Using Open-Source LLM (Meta-Llama-3.1-8B-Instruct)
 
 This project demonstrates the generation of SQL queries from real data using the **Meta-Llama-3.1-8B-Instruct** Large Language Model (LLM) downloaded from Hugging Face. The model has been quantized to 4-bit precision to optimize memory usage.
 
@@ -21,7 +21,7 @@ Before you begin, ensure you have met the following requirements:
   - **System Memory:** Approximately 4 GB
   I used an AWS `g5.xlarge` instance with an A10G GPU for this project.
 
-### 4. Download the Open-Source LLM (**Meta-Llama-3.1-8B-Instruct**)
+### 4. Download Meta-Llama-3.1-8B-Instruct
 
 - **I. Install Hugging Face CLI**
 

@@ -1,6 +1,6 @@
 # SQL Query Generation Using LLM
 
-This project demonstrates the generation of SQL queries from real data using the **Meta-Llama-3.1-8B-Instruct** Large Language Model (LLM) downloaded from Hugging Face.
+This project demonstrates the generation of SQL queries from real data using the **Meta-Llama-3.1-8B-Instruct** Large Language Model (LLM) downloaded from Hugging Face. The model has been quantized to 4-bit precision to optimize memory usage.
 
 > **Note:** To use this model, you have to apply for access. You can do so from [here](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct).
 
@@ -9,8 +9,38 @@ This project demonstrates the generation of SQL queries from real data using the
 
 Before you begin, ensure you have met the following requirements:
 
-- Python 3.10 is installed.
-- `pip` is available for package management.
+### Python 3.10 is installed.
+### `pip` is available for package management.
+### **Hardware Requirements:**
+  - **GPU Memory:** Approximately 11 GB
+  - **System Memory:** Approximately 4 GB
+- I used an AWS `g5.xlarge` instance with an A10G GPU for this project.
+
+### Download the Open-Source LLM (**Meta-Llama-3.1-8B-Instruct**)
+
+#### 1. Install Hugging Face CLI
+
+Install the Hugging Face command line interface (CLI) for managing models:
+
+```bash
+pip install -U "huggingface_hub[cli]"
+```
+
+#### 2. Login to Hugging Face
+
+Authenticate to Hugging Face using your access token:
+
+```bash
+huggingface-cli login
+```
+
+> **Note:** Use your own Hugging Face read token during login. You can find your access token by going to [Hugging Face Tokens](https://huggingface.co/settings/tokens).
+
+#### 3. Download the LLM from Hugging Face:
+
+```bash
+huggingface-cli download meta-llama/Meta-Llama-3.1-8B-Instruct --local-dir Meta-Llama-3.1-8B-Instruct --local-dir-use-symlinks False
+```
 
 ## Setup Instructions
 
@@ -46,32 +76,6 @@ Install the necessary packages using the `requirements.txt` file:
 pip install -r requirements.txt
 ```
 
-## Download the Open-Source LLM (**Meta-Llama-3.1-8B-Instruct)
-
-### 1. Install Hugging Face CLI
-
-Install the Hugging Face command line interface (CLI) for managing models:
-
-```bash
-pip install -U "huggingface_hub[cli]"
-```
-
-### 2. Login to Hugging Face
-
-Authenticate to Hugging Face using your access token:
-
-```bash
-huggingface-cli login
-```
-
-> **Note:** Use your own Hugging Face read token during login. You can find your access token by going to [Hugging Face Tokens](https://huggingface.co/settings/tokens).
-
-### 3. Download the LLM from Hugging Face:
-
-```bash
-huggingface-cli download meta-llama/Meta-Llama-3.1-8B-Instruct --local-dir Meta-Llama-3.1-8B-Instruct --local-dir-use-symlinks False
-```
-
 ## Generate SQL queries using the downloaded LLM (Meta-Llama-3.1-8B-Instruct)
 
 Run the Inference Script to generate SQL queries for 30 random questions from Bird Benchmark’s [dev dataset](https://bird-bench.github.io/):
@@ -79,6 +83,8 @@ Run the Inference Script to generate SQL queries for 30 random questions from Bi
 ```bash
 python inference_llm.py
 ```
+
+The generated data will be saved [here](./predicted/predict_dev.json).
 
 ## Evaluating Generated Queries
 
@@ -92,18 +98,18 @@ You can evaluate the efficiency of the generated SQL queries using the evaluatio
 
     The main evaluation files for this are located at `./evaluation.py` & `./evaluation_ves.py`.
 
-### Benchmarking Results
+## Benchmarking Results
 
 I ran and evaluated the model leveraging Bird Benchmark’s [dev dataset](https://bird-bench.github.io/). I chose 30 random questions and generated results several times. The performance metrics are as follows:
 
 - **Execution Accuracy (EX):** Between 40% and 65%
 - **Valid Efficiency Score (VES):** Between 40% and 80%
 
-#### Screenshot of Benchmark Results
+### Screenshot of Benchmark Results
 
 Below is a screenshot of one run for your reference:
 
-![Benchmark Screenshot](path/to/your/screenshot.png)
+![Benchmark Screenshot](./sample_result.png)
 
 ## Contact
 

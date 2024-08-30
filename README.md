@@ -83,15 +83,17 @@ pip install -r requirements.txt
 ```
 
 
-## Generate SQL queries using the downloaded LLM (Meta-Llama-3.1-8B-Instruct)
+# Generate SQL queries using the downloaded LLM (Meta-Llama-3.1-8B-Instruct)
 
-Run the Inference Script to generate SQL queries for 30 random questions from Bird Benchmark’s [dev dataset](https://bird-bench.github.io/):
+## Run the Inference Script
 
-```bash
-python inference_llm.py
-```
-
-The generated data will be saved [./predicted/predict_dev.json](./predicted/predict_dev.json).
+  Run the Inference Script to generate SQL queries for 30 random questions from Bird Benchmark’s [dev dataset](https://bird-bench.github.io/):
+  
+  ```bash
+  python inference_llm.py
+  ```
+  
+  The generated data will be saved [./predicted/predict_dev.json](./predicted/predict_dev.json).
 
 
 ## Evaluating Generated Queries

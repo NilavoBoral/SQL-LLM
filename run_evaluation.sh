@@ -19,11 +19,11 @@ mode_predict='gpt'
 
 
 echo '''\nstarting to compare for Execution Accuracy (EX)'''
-python3 -u ./evaluation.py --db_root_path ${db_root_path} --predicted_sql_path ${predicted_sql_path} --data_mode ${data_mode} \
+python3 -u ./text_to_sql/evaluation.py --db_root_path ${db_root_path} --predicted_sql_path ${predicted_sql_path} --data_mode ${data_mode} \
 --ground_truth_path ${ground_truth_path} --num_cpus ${num_cpus} --mode_gt ${mode_gt} --mode_predict ${mode_predict} \
 --diff_json_path ${diff_json_path} --meta_time_out ${meta_time_out}
 
 echo '''\nstarting to compare for Valid Efficiency Score (VES)'''
-python3 -u ./evaluation_ves.py --db_root_path ${db_root_path} --predicted_sql_path ${predicted_sql_path} --data_mode ${data_mode} \
+python3 -u ./text_to_sql/evaluation_ves.py --db_root_path ${db_root_path} --predicted_sql_path ${predicted_sql_path} --data_mode ${data_mode} \
 --ground_truth_path ${ground_truth_path} --num_cpus ${num_cpus} --mode_gt ${mode_gt} --mode_predict ${mode_predict} \
 --diff_json_path ${diff_json_path} --meta_time_out ${meta_time_out}

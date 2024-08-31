@@ -63,29 +63,28 @@ huggingface-cli download meta-llama/Meta-Llama-3.1-8B-Instruct --local-dir Meta-
     ├── data                        # Downloaded data folder
     │   ├── dev_databases           
     │   │   └── ...                 
-    │   ├── dev_gold.sql            
-    │   ├── dev_sample.json         
+    │   ├── dev_gold.sql            # This file will change every time you run inference_llm.py  
+    │   ├── dev_sample.json         # This file will be created and change every time you run inference_llm.py
     │   ├── dev_tables.json         
     │   ├── dev_tied_append.json    
     │   ├── dev.json                
     │   └── dev.sql                 
-    ├── predicted               
-    │   └── predict_dev.json        # Generated sql queries file
+    ├── predicted                   # Generated SQL queries JSON file will be saved in this folder
+    │   └── predict_dev.json        # This file will change every time you run inference_llm.py
     ├── text_to_sql                 # Package containing necessary functions
     │   ├── helper                  
     │   │   ├── __init__.py         
     │   │   ├── helper.py           
     │   │   └── sql_helper.py       
-    │   └── sqllm                   
-    │       ├── __init__.py         
-    │       └── main_llm.py         
+    │   ├── sqllm                   
+    │   │   ├── __init__.py         
+    │   │   └── main_llm.py   
+    │   ├── evaluation.py           
+    │   └── evaluation_ves.py       
     ├── README.md                   # Project details / User guide file
-    ├── evaluation.py               # Execution Accuracy (EX) calculation file
-    ├── evaluation_ves.py           # Valid Efficiency Score (VES) calculation file
     ├── inference_llm.py            # File to execute and generate SQL queries
     ├── requirements.txt            # Necessary requirements
-    ├── run_evaluation.sh           # Script to measure accuracy of generated queries
-    └── sample_result.png           # Sample result screenshot
+    └── run_evaluation.sh           # Script to measure accuracy of generated queries
 
 > ### Descriptions
 >
@@ -151,7 +150,7 @@ You can evaluate the efficiency of the generated SQL queries using the evaluatio
     sh ./run_evaluation.sh
     ```
 
-    The main evaluation files for this are located at `./evaluation.py` & `./evaluation_ves.py`.
+    The main evaluation files for this are located at [`./text_to_sql/evaluation.py`](./text_to_sql/evaluation.py) & [`./text_to_sql/evaluation_ves.py`](./text_to_sql/evaluation_ves.py).
 
 > **Note:** Important Paths for Evaluation
 > To run the evaluation script, ensure the following paths are correctly set:

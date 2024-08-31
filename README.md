@@ -2,7 +2,7 @@
 
 This project demonstrates the generation of SQL queries from real data using the **Meta-Llama-3.1-8B-Instruct** Large Language Model (LLM) downloaded from Hugging Face. The model has been quantized to 4-bit precision to optimize memory usage.
 
-> **Note:** To use this model, you have to apply for access. You can do so from [here](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct).
+> **Note:** To download this model, you have to apply for access. You can do so from [here](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct).
 
 
 ## My Approach
@@ -19,6 +19,7 @@ Before you begin, ensure you have met the following requirements:
 ### 3. **Hardware Requirements:**
   - **GPU Memory:** Approximately 11 GB (for the quantized 4-bit version of Meta-Llama-3.1-8B-Instruct)
   - **System Memory:** Approximately 4 GB
+  
   I used an AWS `g5.xlarge` instance with an A10G GPU for this project.
 
 ### 4. Download Meta-Llama-3.1-8B-Instruct
@@ -51,7 +52,45 @@ huggingface-cli download meta-llama/Meta-Llama-3.1-8B-Instruct --local-dir Meta-
 
 - Download [Bird Benchmark’s dev set](https://bird-bench.oss-cn-beijing.aliyuncs.com/dev.zip).
 - Unzip the file.
-- Rename the folder as `data` and place it in the following path: [./data](./data).
+- Rename the folder as `data` and place it in the following path: [./](./).
+
+
+## After downloading and setting up the data, your project structure should look like this:
+    .
+    ├── ..
+    ├── Meta-Llama-3.1-8B-Instruct  # Downloaded model folder
+    │   └── ...           
+    ├── data                        # Downloaded data folder
+    │   ├── dev_databases           
+    │   │   └── ...                 
+    │   ├── dev_gold.sql            
+    │   ├── dev_sample.json         
+    │   ├── dev_tables.json         
+    │   ├── dev_tied_append.json    
+    │   ├── dev.json                
+    │   └── dev.sql                 
+    ├── predicted               
+    │   └── predict_dev.json        # Generated sql queries file
+    ├── text_to_sql                 # Package containing necessary functions
+    │   ├── helper                  
+    │   │   ├── __init__.py         
+    │   │   ├── helper.py           
+    │   │   └── sql_helper.py       
+    │   └── sqllm                   
+    │       ├── __init__.py         
+    │       └── main_llm.py         
+    ├── README.md                   # Project details / User guide file
+    ├── evaluation.py               # Execution Accuracy (EX) calculation file
+    ├── evaluation_ves.py           # Valid Efficiency Score (VES) calculation file
+    ├── inference_llm.py            # File to execute and generate SQL queries
+    ├── requirements.txt            # Necessary requirements
+    ├── run_evaluation.sh           # Script to measure accuracy of generated queries
+    └── sample_result.png           # Sample result screenshot
+
+> ### Descriptions
+>
+> - **inference_llm.py:** This is the main execution file for generating SQL queries using all necessary codes.
+> - **run_evaluation.sh:** Script to run and measure the accuracy of the generated queries.
 
 
 ## Setup Instructions

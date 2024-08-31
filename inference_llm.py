@@ -6,7 +6,7 @@ from text_to_sql.helper import load_json, print_progress_bar, save_list_as_json,
 
 pipeline = load_llm(
     model_id="/home/ubuntu/AI-experiments/LLMs/Meta-Llama-3.1-8B-Instruct", # Path to the downloaded LLM
-    optimize='8-bit', 
+    optimize='4-bit', 
     device='auto'
 )
 

@@ -89,8 +89,8 @@ huggingface-cli download meta-llama/Meta-Llama-3.1-8B-Instruct --local-dir Meta-
 
 > ### Descriptions
 >
-> - **inference_llm.py:** This is the main execution file for generating SQL queries using all necessary codes.
-> - **run_evaluation.sh:** Script to run and measure the accuracy of the generated queries.
+> - [**inference_llm.py**](./inference_llm.py): This is the main execution file for generating SQL queries using all necessary codes.
+> - [**run_evaluation.sh**](./run_evaluation.sh): Script to run and measure the accuracy of the generated queries.
 
 
 ## Setup Instructions
